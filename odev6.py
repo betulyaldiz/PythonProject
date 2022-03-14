@@ -37,7 +37,7 @@ class PriceAlertPush(WebPush):
         print(price_info - (price_info * discount_rate))
 
 
-class InstockPush(WebPush):
+class instockPush(WebPush):
     def __init__(self, platform, optin, global_frequency_capping, start_date, end_date, language, push_type):
         super().__init__(platform, optin, global_frequency_capping, start_date, end_date, language, push_type)
 
@@ -54,11 +54,11 @@ class InstockPush(WebPush):
 
         return stock_info
 
-trigger_push_nesnesi = TriggerPush("Chrome" , True , 4 , "01.02.2022" , "01.01.2023" , "EN", "TriggerPush" , "Home Page")
+trigger_push_nesnesi = TriggerPush("Chrome" , True , 4 , "01.02.2022" , "01.01.2023" , "EN", "TriggerPush" , "HomePage")
 print(trigger_push_nesnesi.trigger_page)
 trigger_push_nesnesi.send_push()
 
-bulk_push_nesnesi = BulkPush("Chrome" , True , 4 , "01.01.2022" , "01.01.2023" , "EN", "BulkPush" , "02.02.2024")
+bulk_push_nesnesi = BulkPush("Chrome" , True , 4 , "01.01.2022" , "01.01.2023" , "EN", "BulkPush" , "01.01.2024")
 print(bulk_push_nesnesi.send_date)
 bulk_push_nesnesi.send_push()
 
@@ -67,9 +67,9 @@ print(segment_push_nesnesi.segment_name)
 segment_push_nesnesi.send_push()
 
 price_alertPush_nesnesi = PriceAlertPush("Chrome", True , 4 , "01.01.2022" , "01.01.2023" , "EN", "PriceAlertPush")
-price_alertPush_nesnesi.discoun_price(200, 0.2)
+price_alertPush_nesnesi.discoun_price(200, 0.4)
 price_alertPush_nesnesi.send_push()
 
-instock_push_nesnesi = InstockPush("Edge" , True , 4 , "01.01.2022" , "01.01.2023" , "EN", "InStockPush")
+instock_push_nesnesi = instockPush("Edge" , True , 4 , "01.01.2022" , "01.01.2023" , "EN", "InStockPush")
 instock_push_nesnesi.stock_update(True)
 instock_push_nesnesi.send_push()

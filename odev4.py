@@ -17,12 +17,13 @@ class Soru():
         self.dogru = int(dogru)
         self.yanlis = int(yanlis)
 
-    def NetSayisi(self):
+
+    def netSayisi(self):
         self.net = self.dogru - (self.yanlis / 4)
         return self.net
 
-    def Hesapla(self,net):
-        self.sonuc = net * 2
+    def hesapla(self):
+        self.sonuc = self.net * 2
         return self.sonuc
 
     def puan(self):
@@ -31,8 +32,9 @@ class Soru():
         Puan  : {}
         """.format(self.net,self.sonuc))
 
-sınavSonucu = Soru(30, 20)
 ogrenci1 = Ogrenci("Betül", "Yaldiz", 12)
 ogrenci1.bilgileriGoster()
-sınavSonucu.puan()
-
+sonuc= Soru(30, 20)
+sonuc.netSayisi()
+sonuc.hesapla()
+sonuc.puan()
